@@ -12,24 +12,26 @@
             $input = "a";
 
             //Act
-            $output = $test_word->score($input);
+            $result = $test_word->score($input);
 
             //Assert
-            $this->assertEquals(1, $output);
+            $final_score = 1;
+            $this->assertEquals($final_score, $result);
         }
 
         function test_scrabble_score_2letters()
         {
             //Arrange
             $test_word = new ScrabbleScore;
-            $input = "an";
+            $input = "na";
 
             //Act
-            $output = $test_word->score($input);
+            $result = $test_word->score($input);
+
 
             //Assert
-            $this->assertEquals(2, $output);
+            $final_score = 2;
+            $this->assertEquals($final_score, $result);
         }
     }
-
 ?>

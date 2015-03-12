@@ -4,26 +4,27 @@
     class ScrabbleScore
     {
 
-        function score($input) {
 
+    function score($input){
 
-            $result="";
-            $exploded_input = array();
-            $exploded_input = str_split($input);
+        $score = array();
+        $word_split = array();
+        $one = array("a", "e", "i", "o", "u", "l", "n", "r", "s", "t");
+        $word_split = str_split($input);
+        $tile = 0;
+        $final_score = 0;
 
-            foreach ($exploded_input as $letter) {
+        foreach ($word_split as $letter)
+        {
+            if (in_array($letter, $one)) {
+                ++$tile;
+                array_push($score, $tile);
+                $tile=0;
+             }
 
-            if ($letter == "a" | "e" |"i" | "o" | "u" | "l"| "n" | "r" | "s" | "t") {
+        $final_score = array_sum($score);
 
-                $result += 1;
-            }
-
-            // if ($input == "d" | "g") {
-            //     $result + = 2;
-            // }
-            return $result;
-
-        }}
-    }
-
+        }
+        return $final_score;
+    }}
 ?>
