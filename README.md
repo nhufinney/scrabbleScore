@@ -17,5 +17,6 @@ Setup instructions: install composer before run. Composers include Silex, Twig.
 
 - HTML5
 - CSS3
-- JavaScript
+- PHP
+- Silex, Twig, PHP Unit
 - Bootstrap ver 3.3.4
